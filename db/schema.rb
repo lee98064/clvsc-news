@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_035123) do
+ActiveRecord::Schema.define(version: 2020_08_22_084828) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string "name"
@@ -19,9 +19,25 @@ ActiveRecord::Schema.define(version: 2020_08_22_035123) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schoolpostfiles", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.integer "schoolpost_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schoolpostimages", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.integer "schoolpost_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "schoolposts", force: :cascade do |t|
     t.string "title"
-    t.string "content"
+    t.text "content"
     t.date "publishdate"
     t.string "link"
     t.integer "catalog_id"
