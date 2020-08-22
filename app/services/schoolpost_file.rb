@@ -29,7 +29,7 @@ class SchoolpostFile
                         File.open(path + postfile.text, "wb") do |file|
                             file.write open("http://www.clvsc.tyc.edu.tw" + filelink).read
                         end
-                        Schoolpostfile.find_or_create_by(name: postfile.text, schoolpost_id: post.id, link: filelink)
+                        Schoolpostfile.find_or_create_by(name: postfile.text, schoolpost_id: post.id, link: "http://www.clvsc.tyc.edu.tw" + filelink)
                     rescue
                         p "------錯誤------"
                         p "http://www.clvsc.tyc.edu.tw" + postfile['href']
