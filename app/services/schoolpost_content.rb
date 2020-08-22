@@ -6,6 +6,9 @@ class SchoolpostContent
         posts = Schoolpost.where("publishdate >= '2020-06-01'")
         posts.each do |post|
             begin
+                url = URI(post.link)
+                response = Net::HTTP.get(url)
+                source = Nokogiri::HTML(response)
                 post.content = source.xpath("//div[@class='ptcontent clearfix floatholder']").to_html
                 post.save
             rescue
