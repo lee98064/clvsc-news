@@ -1,7 +1,6 @@
 require "json"
 class SchoolpostsController < ApplicationController
     def index
-        SchoolpostInfo.new.get
         @posts = Schoolpost.all.includes(:catalog, :schoolpostimages, :schoolpostfiles).limit(100)
         render json: @posts.to_json(
             :include => {

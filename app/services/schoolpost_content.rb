@@ -6,7 +6,7 @@ class SchoolpostContent
         path = Rails.root.join('public', 'schoolposts')
         Dir.mkdir(path) unless Dir.exist?(path)
         Dir.mkdir(path.join('files')) unless Dir.exist?(path.join('files'))
-        posts = Schoolpost.all
+        posts = Schoolpost.where("id > 82 and id < 87")
         posts.each do |post|
             url = URI(post.link)
             response = Net::HTTP.get(url)
@@ -18,8 +18,13 @@ class SchoolpostContent
             postfiles.each do |postfile|
                 Dir.mkdir(path) unless Dir.exist?(path)
                 begin
+                    if postfile['href'] == "javascript:void(0)"
+                        filelink = postfile['onfocus'].split("'")[3]
+                    else
+                        filelink = postfile['href']
+                    end
                     File.open(path + postfile.text, "wb") do |file|
-                        file.write open("http://www.clvsc.tyc.edu.tw" + postfile['href']).read
+                        file.write open("http://www.clvsc.tyc.edu.tw" + filelink).read
                     end
                     Schoolpostfile.find_or_create_by(name: postfile.text, schoolpost_id: post.id, link: "http://www.clvsc.tyc.edu.tw" + postfile['href'])
                 rescue
@@ -35,7 +40,7 @@ class SchoolpostContent
                     postimagename = postimage['src'].split('/')
                     postimagename = postimagename[postimagename.count - 1]
                     File.open(path + postimagename, "wb") do |file|
-                    file.write open("http://www.clvsc.tyc.edu.tw" + postimage['src']).read
+                        file.write open("http://www.clvsc.tyc.edu.tw" + postimage['src']).read
                     end
                     Schoolpostimage.find_or_create_by(name: postimagename,link: "http://www.clvsc.tyc.edu.tw" + postimage['src'],schoolpost_id: post.id)
                 rescue
