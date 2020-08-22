@@ -4,12 +4,24 @@
     <title>ClvscNews</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<header class="header">
+        <a href="/" class="logo">壢商公告</a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+        <ul class="menu">
+            <li><a href="/">首頁</a></li>
+            <li><a href="/">公告搜尋</a></li>
+            <li><a href="/schoolpostsapi">API 串接</a></li>
+            <li><a href="/about">關於</a></li>
+        </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
