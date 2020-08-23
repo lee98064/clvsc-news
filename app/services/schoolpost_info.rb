@@ -26,5 +26,8 @@ class SchoolpostInfo
                 url = URI(nextpage[0]['href']) unless nextpage.empty?
             end until nextpage.empty?
         end
+        SchoolpostInfo.new.get
+        SchoolpostImage.new.get
+        SchoolpostFile.new.get
     end
 end

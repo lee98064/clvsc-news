@@ -3,7 +3,9 @@ require 'open-uri'
 require 'fileutils'
 class SchoolpostContent
     def get
-        posts = Schoolpost.where("publishdate >= '2020-06-01'")
+        time = Time.new
+        time = time - 30.day
+        posts = Schoolpost.where("publishdate >= ?", time.strftime("%Y-%m-%d"))
         posts.each do |post|
             begin
                 url = URI(post.link)

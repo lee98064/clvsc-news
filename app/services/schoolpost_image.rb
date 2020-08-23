@@ -3,11 +3,12 @@ require 'open-uri'
 require 'fileutils'
 class SchoolpostImage
     def get
+        time = Time.new
+        time = time - 30.day
         path = Rails.root.join('public', 'schoolposts')
         Dir.mkdir(path) unless Dir.exist?(path)
         Dir.mkdir(path.join('images')) unless Dir.exist?(path.join('images'))
-        # posts = Schoolpost.where("publishdate >= '2020-06-01'")
-        posts = Schoolpost.all
+        posts = Schoolpost.where("publishdate >= ?", time.strftime("%Y-%m-%d"))
         posts.each do |post|
             begin
                 url = URI(post.link)

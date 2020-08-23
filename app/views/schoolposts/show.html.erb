@@ -4,7 +4,7 @@
 <div class="postshow">
     <h1 class="posttitle"><%= @post.title %></h1>
     <div class="postcontent">
-        <%= simple_format(@post.content.gsub("/ezfiles/0/1000/img/", "http://www.clvsc.tyc.edu.tw/ezfiles/0/1000/img/")) %>
+        <%= simple_format(@post.content&.gsub("/ezfiles/0/1000/img/", "http://www.clvsc.tyc.edu.tw/ezfiles/0/1000/img/")) %>
     </div>
     <% unless @post.try(:schoolpostimages).empty? %>
         <div class="postimages">
