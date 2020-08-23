@@ -1,0 +1,3 @@
+$('.allpost').html('<%= j render "allpost" %>');
+$('#postpaginate').html('<%= j paginate(@posts, remote: true) %>');
+window.history.pushState('', document.title, window.location.href.split("?")[0]);

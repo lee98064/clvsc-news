@@ -1,0 +1,37 @@
+<% provide :web_title, @post.title %>
+
+
+<div class="postshow">
+    <h1 class="posttitle"><%= @post.title %></h1>
+    <div class="postcontent">
+        <%= simple_format(@post.content.gsub("/ezfiles/0/1000/img/", "http://www.clvsc.tyc.edu.tw/ezfiles/0/1000/img/")) %>
+    </div>
+    <% unless @post.try(:schoolpostimages).empty? %>
+        <div class="postimages">
+            <h3>本文照片</h3>
+            <hr>
+            <div id="gallery">
+                <% @post.try(:schoolpostimages).each do |image| %>
+                    <%= image_tag("/schoolposts/images/#{@post.id}/#{image.name}",href: "/schoolposts/images/#{@post.id}/#{image.name}") %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    <% unless @post.try(:schoolpostfiles).empty? %>
+        <div class="postfiles">
+            <h3>本文檔案</h3>
+            <hr>
+            <ul>
+                <% @post.try(:schoolpostfiles).each do |file| %>
+                    <li><%= link_to file.name, "/schoolposts/files/#{@post.id}/#{file.name}", target: :blank %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <hr>
+    <div class="bottom-nav">
+        <%= link_to "返回", :back %>
+        <%= link_to "所有公告", schoolposts_path %>
+        <%= link_to "前往原文", @post.link, target: :blank %>
+    </div>
+</div>

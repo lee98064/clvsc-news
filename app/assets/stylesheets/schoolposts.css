@@ -1,0 +1,76 @@
+.allpost {
+    background: #faf7ff;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+}
+
+.card {
+    padding: 10px;
+    border-bottom: 1px solid #aca9bb;
+}
+
+.card:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.card h3 {
+    margin: 5px;
+    color: #000;
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
+}
+
+.card h4 {
+    margin: 5px;
+}
+
+.postshow {
+    margin-top: 20px;
+    background: #faf7ff;
+    border-radius: 10px;
+    padding: 10px 30px 20px;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .posttitle {
+        font-size: 1.5em;
+    }
+}
+
+.postcontent {
+    min-height: 500px;
+}
+
+.postcontent img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.postimages #gallery {
+    display: flex;
+    overflow-x: auto;
+}
+
+.postimages #gallery img {
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+}
+
+.postshow .bottom-nav {}
+
+.postshow .bottom-nav a {
+    display: inline-block;
+    padding: 10px;
+    color: #00b38f;
+    text-decoration: none;
+}

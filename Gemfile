@@ -64,8 +64,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'dotenv-rails'
 
+gem 'jquery-rails'
+
 gem 'http'
 
 gem 'nokogiri'
 
 gem 'rails_admin'
+
+gem 'kaminari'
+
+gem 'whenever', require: false

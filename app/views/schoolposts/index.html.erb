@@ -1,0 +1,11 @@
+<% provide :web_title, "最新公告" %>
+
+<h1 class="funtiontitle">一個月內最新公告</h1>
+
+<div class="allpost">
+   <%= render  "allpost" %>
+</div>
+
+<div id="postpaginate">
+    <%= paginate @posts, remote: true %>
+</div>

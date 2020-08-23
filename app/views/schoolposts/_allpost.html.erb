@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+    <div class="card">
+        <h3><%= link_to post.title , schoolpost_path(post) %></h3>
+        <h4><i class="fas fa-user fa-fw"></i><%= post.try(:catalog).name %></h4>
+        <h4><i class="fas fa-calendar fa-fw"></i><%= post.publishdate %></h4>
+    </div>
+<% end %>
