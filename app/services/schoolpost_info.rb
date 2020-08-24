@@ -14,8 +14,7 @@ class SchoolpostInfo
                 posts.each do |post|
                     link = post.xpath("./a/@href").text
                     title = post.xpath("./a").text
-                    # schoolpost = Schoolpost.find_or_initialize_by(link: link)
-                    schoolpost = Schoolpost.find_or_initialize_by(title: title)
+                    schoolpost = Schoolpost.find_or_initialize_by(link: link)
                     schoolpost.title = title
                     schoolpost.catalog_id = catalog.id
                     begin
@@ -28,7 +27,7 @@ class SchoolpostInfo
                 url = URI(nextpage[0]['href']) unless nextpage.empty?
             end until nextpage.empty?
         end
-        SchoolpostInfo.new.get
+        SchoolpostContent.new.get
         SchoolpostImage.new.get
         SchoolpostFile.new.get
     end

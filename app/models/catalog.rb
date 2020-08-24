@@ -1,3 +1,3 @@
 class Catalog < ApplicationRecord
-    has_many :schoolposts
+    has_many :schoolposts, -> { order(:publishdate => :desc) }
 end
