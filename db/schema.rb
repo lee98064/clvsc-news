@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_084828) do
+ActiveRecord::Schema.define(version: 2020_08_24_091001) do
 
   create_table "catalogs", force: :cascade do |t|
     t.string "name"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "update_everyday"
   end
 
   create_table "schoolpostfiles", force: :cascade do |t|
@@ -41,6 +42,13 @@ ActiveRecord::Schema.define(version: 2020_08_22_084828) do
     t.date "publishdate"
     t.string "link"
     t.integer "catalog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

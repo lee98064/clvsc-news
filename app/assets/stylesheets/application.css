@@ -59,11 +59,18 @@ body {
 
 .header .logo {
     float: left;
-    display: block;
+    display: flex;
     font-size: 1.8em;
     padding: 10px 20px;
     color: #fff;
     text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo a {
+    margin-left: 10px;
+    color: #fff;
 }
 
 .header .menu {

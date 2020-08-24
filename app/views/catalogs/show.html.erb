@@ -1,0 +1,10 @@
+<% provide :web_title, @catalog.name %>
+
+<h1 class="funtiontitle"><%= @catalog.name %></h1>
+<div class="allpost">
+    <%= render  "schoolposts/allpost" %>
+</div>
+
+<div id="postpaginate">
+    <%= paginate @posts, remote: true %>
+</div>

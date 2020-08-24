@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="Shortcut Icon" type="image/x-icon" href="<%= image_path("webicon.png") %>">
     <title><%= yield :web_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'schoolposts', media: 'all', 'data-turbolinks-track': 'reload' %>

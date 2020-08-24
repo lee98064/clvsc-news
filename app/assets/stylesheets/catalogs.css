@@ -1,0 +1,37 @@
+.allcatalog {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.allcatalog a {
+    width: 100%;
+    padding-bottom: 50%;
+    /* height: 100px; */
+    display: inline-block;
+    padding: 30px;
+    background: #00c896;
+    border-radius: 10px;
+    text-decoration: none;
+    justify-content: center;
+    margin: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.allcatalog a:nth-child(even) {
+    background: #00c6cf;
+}
+
+.allcatalog a:nth-child(3n) {
+    background-color: #007d5c;
+}
+
+.allcatalog a:hover {
+    background: #5D5D5D;
+}

@@ -1,0 +1,9 @@
+<% provide :web_title, "所有分類" %>
+
+<h1 class="funtiontitle">所有分類</h1>
+
+<div class="allcatalog">
+    <% @catalogs.each do |catalog| %>
+        <%= link_to catalog.name, catalog_path(catalog) %>
+    <% end %>
+</div>

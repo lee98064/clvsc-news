@@ -13,6 +13,10 @@ Rails.application.config.assets.precompile += %w( bootstrap.css )
 Rails.application.config.assets.precompile += %w( schoolposts.css )
 
 Rails.application.config.assets.precompile += %w( schoolposts.js )
+
+Rails.application.config.assets.precompile += %w( catalogs.css )
+
+Rails.application.config.assets.precompile += %w( catalogs.js )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

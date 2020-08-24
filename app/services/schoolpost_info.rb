@@ -3,7 +3,7 @@ require 'open-uri'
 class SchoolpostInfo
 
     def get
-        catalogs = Catalog.all
+        catalogs = Catalog.where(update_everyday: true)
         catalogs.each do |catalog|
             url = URI(catalog.link)
             begin

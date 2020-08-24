@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every 2.hours do
+every 4.hours do
     rake "daily_update:info"
 end

@@ -1,7 +1,12 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-
+  config.authenticate_with do
+    authenticate_or_request_with_http_basic('Login required') do |username, password|
+      user = User.where(name: username).first
+      user.authenticate(password) if user
+    end
+  end
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user

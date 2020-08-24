@@ -1,4 +1,3 @@
-require "json"
 class SchoolpostsController < ApplicationController
     def index
         time = Time.new
