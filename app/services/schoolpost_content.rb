@@ -5,7 +5,7 @@ class SchoolpostContent
     def get
         time = Time.new
         time = time - 10.day
-        posts = Schoolpost.where("publishdate >= ?", time.strftime("%Y-%m-%d"))
+        # posts = Schoolpost.where("publishdate >= ?", time.strftime("%Y-%m-%d"))
         catalogs = Catalog.includes(:schoolposts).where(update_everyday: true)
         catalogs.each do |catalog|
             catalog.try(:schoolposts).each do |post|
