@@ -1,0 +1,10 @@
+<% if params[:type] == "post" && !@posts.empty? %>
+  $('.search-result').html('<%= j render 'allpost'%>')
+  $('#postpaginate').html('<%= j paginate @posts, remote: true, keyword: params[:keyword], type: params[:type] %>')
+<% elsif params[:type] == "file" && !@files.empty? %>
+  $('.search-result').html('<%= j render 'allfile' %>')
+  $('#postpaginate').html('<%= j paginate @files, remote: true, keyword: params[:keyword], type: params[:type] %>')
+<% else %>
+    $('.search-result').html('關鍵字過短或查無資料!')
+    $('#postpaginate').html('')
+<% end %>

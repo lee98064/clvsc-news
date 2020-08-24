@@ -1,0 +1,7 @@
+<% @files.each do |file| %>
+    <div class="card">
+        <h3><%= link_to file.name , "/schoolposts/files/#{file.try(:schoolpost).id}/#{file.name}" %></h3>
+        <h4><i class="fas fa-newspaper fa-fw"></i><%= link_to  file.try(:schoolpost).title , schoolpost_path(file.try(:schoolpost).id) %></h4>
+        <h4><i class="fas fa-calendar fa-fw"></i><%= file.try(:schoolpost).publishdate %></h4>
+    </div>
+<% end %>

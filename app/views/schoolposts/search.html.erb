@@ -1,0 +1,23 @@
+<% provide :web_title, "搜尋公告" %>
+
+<h1 class="funtiontitle">搜尋公告</h1>
+<form action="search" method="post" class="search" data-remote="true">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="form-group">
+        <input type="text" name="keyword" placeholder="請輸入關鍵字" autocomplete="off">
+        <button type="submit"><i class="fas fa-search fa-fw"></i></button>
+    </div>
+    <div class="form-group type">
+        <input type="radio" name="type" value="post" class="mgr mgr-primary" checked>公告
+        <input type="radio" name="type" value="file" class="mgr mgr-info mgr-sm">檔案
+    </div>
+</form>
+
+
+<div class="search-result">
+   搜尋結果
+</div>
+
+<div id="postpaginate">
+    
+</div>

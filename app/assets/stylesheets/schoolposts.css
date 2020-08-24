@@ -1,3 +1,5 @@
+@import url('https://unpkg.com/magic-input/dist/magic-input.min.css');
+
 .allpost {
     background: #faf7ff;
     border-radius: 10px;
@@ -46,6 +48,10 @@
     }
 }
 
+.posttitle {
+    margin-bottom: 5px;
+}
+
 .postcontent {
     min-height: 500px;
 }
@@ -66,11 +72,67 @@
     margin-left: 10px;
 }
 
-.postshow .bottom-nav {}
-
 .postshow .bottom-nav a {
     display: inline-block;
     padding: 10px;
     color: #00b38f;
     text-decoration: none;
+}
+
+
+.form-group {
+    display: flex;
+    margin-top: 5px;
+}
+
+.form-group input[type='text'] {
+    border: none;
+    background: transparent;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0px 15px 20px;
+    border-radius: 30px 0px 0px 30px;
+    font-size: 1.0em;
+    position: relative;
+    transition: 0.3s;
+}
+
+.form-group input[type='text']:hover,
+.form-group input[type='text']:focus {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    outline: none;
+}
+
+.form-group button {
+    padding: 10px 20px 10px 10px;
+    background: #54ecc4;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 0px 35px 30px 0px;
+    transition: 0.3s;
+}
+
+.form-group button:hover,
+.form-group button:focus {
+    background: #00fbb9;
+    outline: none;
+}
+
+
+.form-group input[type='radio'] {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.type {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.search-result {
+    margin-top: 10px;
+    background: #faf7ff;
+    border-radius: 10px;
+    padding: 10px;
 }

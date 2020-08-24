@@ -1,8 +1,11 @@
 <% provide :web_title, @post.title %>
 
-
 <div class="postshow">
     <h1 class="posttitle"><%= @post.title %></h1>
+    <div class="postinfo">
+        <span><i class="fas fa-user fa-fw"></i><%= @post.try(:catalog).name %></span>
+        <span><i class="fas fa-calendar fa-fw"></i><%= @post.publishdate %></span>
+    </div>
     <div class="postcontent">
         <%= simple_format(@post.content&.gsub("/ezfiles/0/1000/img/", "http://www.clvsc.tyc.edu.tw/ezfiles/0/1000/img/")) %>
     </div>
@@ -30,7 +33,7 @@
     <% end %>
     <hr>
     <div class="bottom-nav">
-        <%= link_to "返回", :back %>
+        <a href="javascript:history.back()">返回</a>
         <%= link_to "所有公告", schoolposts_path %>
         <%= link_to "前往原文", @post.link, target: :blank %>
     </div>

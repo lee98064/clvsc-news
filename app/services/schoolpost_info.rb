@@ -13,8 +13,10 @@ class SchoolpostInfo
                 nextpage = source.xpath("//a[contains(@class,'pagenum') and contains(text(),'下一頁')]")
                 posts.each do |post|
                     link = post.xpath("./a/@href").text
-                    schoolpost = Schoolpost.find_or_initialize_by(link: link)
-                    schoolpost.title = post.xpath("./a").text
+                    title = post.xpath("./a").text
+                    # schoolpost = Schoolpost.find_or_initialize_by(link: link)
+                    schoolpost = Schoolpost.find_or_initialize_by(title: title)
+                    schoolpost.title = title
                     schoolpost.catalog_id = catalog.id
                     begin
                         schoolpost.publishdate = Time.parse(post.xpath("../span[contains(@class,'date')]").text).to_date
