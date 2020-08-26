@@ -1,6 +1,6 @@
 <% provide :web_title, @post.title %>
 
-<div class="postshow">
+<div class="postshow" id="postshow">
     <h1 class="posttitle"><%= @post.title %></h1>
     <div class="postinfo">
         <span><i class="fas fa-user fa-fw"></i><%= @post.try(:catalog).name %></span>
@@ -34,6 +34,7 @@
     <hr>
     <div class="bottom-nav">
         <a href="javascript:history.back()">返回</a>
+        <a href="javascript:screenshot()">截圖</a>
         <%= link_to "所有公告", schoolposts_path %>
         <%= link_to "前往原文", @post.link, target: :blank %>
     </div>
