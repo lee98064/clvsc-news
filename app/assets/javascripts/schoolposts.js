@@ -11,7 +11,7 @@ $(document).ready(function () {
 function screenshot() {
     html2canvas(document.querySelector("#postshow"), {
         y: 100
-    }).then(canvas => {
+    }).then(function (canvas) {
         canvas.style.display = 'none';
         document.body.appendChild(canvas)
         var a = document.createElement('a');
